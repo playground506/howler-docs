@@ -10,7 +10,7 @@ export default function CommunityPage(): ReactNode {
           <HeroBanner
             title = 'Community'
             tagline = 'Joing our community and contribuite'
-            primaryActionLabel = 'Learn more about🌎 it '
+            primaryActionLabel = 'Learn more about 🌎 it '
             primaryActionLink = '/Community/intro'
             showAction 
             />  
