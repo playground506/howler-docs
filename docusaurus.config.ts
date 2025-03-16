@@ -48,10 +48,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/playground506/howler-docs/tree/main/docs/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -73,18 +71,30 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Project',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/playground506/howler-docs',
-          label: 'GitHub',
-          position: 'right',
-        },
+          {
+            to: '/community',
+            label: 'Community',
+            position: 'left',
+            activeBaseRegex: '/community/'
+          },
+          {
+            to: '/certifications',
+            label: 'Certifications',
+            position: 'left',
+            activeBaseRegex: '/certifications/'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'Docs',
+          },
+          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            href: 'https://github.com/playground506/howler-docs',
+            label: 'GitHub',
+            position: 'right',
+          },
       ],
     },
     footer: {
@@ -102,10 +112,6 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            // {
-            //   label: 'Stack Overflow',
-            //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            // },
             {
               label: 'Discord',
               href: 'https://discord.gg/a7Gkd22h',
@@ -136,7 +142,73 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    
+    announcementBar: {
+      id: 'SWA Announcements',
+      content:
+      // '<b> Join: <a href="https://aka.ms/swa/community/standups"> Monthly Community Standups </a> | Visit: <a href="https://aka.ms/30DaysOfSWA/github">GitHub Repo</a> (& give us a ⭐️)</b>',
+
+      '<b> Join: our team learn and share 📗 . </a> | Visit:  (& give us a ⭐️)</b>',
+      backgroundColor: '#552f99',
+      textColor: '#ffffff',
+      isCloseable: false,
+    },
   } satisfies Preset.ThemeConfig,
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./sidebarsCommunity.ts'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'certifications',
+        path: 'certifications',
+        routeBasePath: 'certifications',
+        sidebarPath: require.resolve('./sidebarsCertifications.ts'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-ideal-image',
+      {
+        quality: 70,
+        max: 1030, // max resized image's size.
+        min: 640, // min resized image's size. 
+        steps: 2, // #images b/w min and max (inclusive)
+        disableInDev: false,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'blog-howlerdoc',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'thismonth',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './blog-howlerdoc',
+        blogTitle: 'This Month In SWA',blogDescription: 'A monthly roundup of Azure Static Web Apps news, updates, content and more from your friendly neighborhood SWA team!',
+        blogSidebarCount: 12,
+        blogSidebarTitle: '#ThisMonthInSWA',
+        tagsBasePath: 'tags',
+        archiveBasePath: 'archive',
+        postsPerPage: 1,
+        showReadingTime: true,
+        sortPosts: 'descending'
+      },
+    ],
+  ],
+
 };
 
 export default config;
