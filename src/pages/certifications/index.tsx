@@ -11,14 +11,14 @@ export default function CertificationsPage(): ReactNode {
             title = 'Certifications'
             tagline = 'Find some information about certifications'
             primaryActionLabel = 'Learn more about it 📗'
-            primaryActionLink = '/Certifications/intro'
+            primaryActionLink = '/certifications/intro'
             showAction 
             />  
           <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
             <h1>Certifications</h1>
             <p>Welcome to our Certifications section</p>
             <ul>
-              <li><Link to="/howler-docs/certifications/mock">Mock</Link></li>
+              <li><Link to="/howler-docs/certifications/intro">Mock</Link></li>
             </ul>
           </div>
       </main>

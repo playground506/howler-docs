@@ -11,14 +11,14 @@ export default function CommunityPage(): ReactNode {
             title = 'Community'
             tagline = 'Joing our community and contribuite'
             primaryActionLabel = 'Learn more about 🌎 it '
-            primaryActionLink = '/Community/intro'
+            primaryActionLink = '/community/intro'
             showAction 
             />  
           <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
             <h1>Community</h1>
             <p>Welcome to our community section</p>
             <ul>
-              <li><Link to="/howler-docs/community/mock">Mock</Link></li>
+              <li><Link to="/howler-docs/community/intro">Mock</Link></li>
             </ul>
           </div>
       </main>

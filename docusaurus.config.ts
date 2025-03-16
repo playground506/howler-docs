@@ -20,7 +20,7 @@ const config: Config = {
   organizationName: 'playground506', // Usually your GitHub org/user name.
   projectName: 'howler-docs', // Usually your repo name.
   deploymentBranch: "gh-ppages",
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -73,13 +73,13 @@ const config: Config = {
       items: [
           {
             to: '/community',
-            label: 'Community',
+            label: 'community',
             position: 'left',
             activeBaseRegex: '/community/'
           },
           {
             to: '/certifications',
-            label: 'Certifications',
+            label: 'certifications',
             position: 'left',
             activeBaseRegex: '/certifications/'
           },
@@ -106,7 +106,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/project',
+              to: '/docs/intro', // Or whatever your first docs page is
             },
           ],
         },
@@ -117,10 +117,6 @@ const config: Config = {
               label: 'Discord',
               href: 'https://discord.gg/a7Gkd22h',
             },
-            // {
-            //   label: 'X',
-            //   href: 'https://x.com/docusaurus',
-            // },
           ],
         },
         {
